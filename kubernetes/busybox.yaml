@@ -9,3 +9,8 @@ spec:
     image: busybox
 
   restartPolicy: Never
+
+  #docker version of the file
+  #FROM scratch
+  #ADD busybox.tar.gz /
+  #CMD ["sh"]

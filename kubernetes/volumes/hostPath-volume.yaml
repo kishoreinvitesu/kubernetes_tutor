@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: hostpath-pod
+spec:
+  containers:
+  - name: app-busybox
+    image: k8s.gcr.io/test-webserver
+    volumeMounts:
+    - mountPath: /test-pod
+      name: app-vol
+
+  volumes:
+  - name: app-vol
+    hostPath:
+      path: /usr/local
+      type: Directory

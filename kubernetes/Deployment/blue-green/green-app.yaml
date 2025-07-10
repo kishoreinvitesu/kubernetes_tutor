@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: green-deployment
+  labels:
+    app: my-app-2.0
+    env: prod
+spec:
+  replicas: 3
+  selector:
+    matchLabels: 
+      app: my-app-2.0
+  template:    
+      metadata:
+        labels:
+          app: my-app-2.0
+      spec:    
+        containers:
+        - name: green-cont
+          image: anshuldevops/magicalnginx:latest
+          ports:
+          - containerPort: 80
